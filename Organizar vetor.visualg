@@ -1,0 +1,32 @@
+algoritmo "Organizar Vetor"
+
+var
+  numeros: vetor[1..10] de inteiro
+  contador, contador2, auxiliar: inteiro
+
+inicio
+
+  // Leitura dos valores
+  para contador de 1 ate 10 faca
+    escreva("Digite o numero ", contador, ": ")
+    leia(numeros[contador])
+  fimpara
+
+  // Ordenação (Bubble Sort)
+  para contador de 1 ate 9 faca
+    para contador2 de 1 ate 10 - contador faca
+      se numeros[contador2] > numeros[contador2 + 1] entao
+        auxiliar <- numeros[contador2]
+        numeros[contador2] <- numeros[contador2 + 1]
+        numeros[contador2 + 1] <- auxiliar
+      fimse
+    fimpara
+  fimpara
+
+  // Exibição
+  escreval("Vetor ordenado:")
+  para contador de 1 ate 10 faca
+    escreva(numeros[contador], " - ")
+  fimpara
+
+fimalgoritmo
